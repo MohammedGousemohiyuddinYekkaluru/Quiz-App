@@ -45,11 +45,15 @@ const answerElem = document.querySelectorAll(".answer");
 let currentQuestion = 0;
 let score = 0;
 
-question.textContent = quiz[currentQuestion].question;
-option_a.textContent = quiz[currentQuestion].ans1text;
-option_b.textContent = quiz[currentQuestion].ans2text;
-option_c.textContent = quiz[currentQuestion].ans3text;
-option_d.textContent = quiz[currentQuestion].ans4text;
+function renderQuestion() {
+  question.textContent = quiz[currentQuestion].question;
+  option_a.textContent = quiz[currentQuestion].ans1text;
+  option_b.textContent = quiz[currentQuestion].ans2text;
+  option_c.textContent = quiz[currentQuestion].ans3text;
+  option_d.textContent = quiz[currentQuestion].ans4text;
+}
+
+renderQuestion();
 
 submit.addEventListener("click", () => {
   const checkedAns = document.querySelector('input[type="radio"]:checked');
@@ -58,7 +62,7 @@ submit.addEventListener("click", () => {
     alert("please select an answer");
   } else {
     if (
-      checkedAns.nextElementSibling.textContent === quiz[currentQuestion].answer   //this selects the next element of input i.e., label in html...
+      checkedAns.nextElementSibling.textContent === quiz[currentQuestion].answer //this selects the next element of input i.e., label in html...
     ) {
       score++;
     }
@@ -66,11 +70,7 @@ submit.addEventListener("click", () => {
     currentQuestion++;
 
     if (currentQuestion < quiz.length) {
-      question.textContent = quiz[currentQuestion].question;
-      option_a.textContent = quiz[currentQuestion].ans1text;
-      option_b.textContent = quiz[currentQuestion].ans2text;
-      option_c.textContent = quiz[currentQuestion].ans3text;
-      option_d.textContent = quiz[currentQuestion].ans4text;
+      renderQuestion();
       checkedAns.checked = false;
     } else {
       alert(`Your score is ${score} out of ${quiz.length}`);
