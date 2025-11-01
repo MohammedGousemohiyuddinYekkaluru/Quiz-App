@@ -31,10 +31,6 @@ A modern, interactive quiz application built using JavaScript. Easily host quizz
 - Modify questions by editing the JavaScript file.
 - Customize the look and feel with your own CSS styles.
 
-## 📄 License
-
-This project currently does **not** specify a license. Please add a license if you intend to share or distribute it.
-
 ## 🙏 Contributing
 
 Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/MohammedGousemohiyuddinYekkaluru/Quiz-App/issues).
